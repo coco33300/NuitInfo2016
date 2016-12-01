@@ -6,9 +6,37 @@
  */
 
 module.exports = {
+  autoCreatedAt: false,
+  autoUpdatedAt: false,
 
   attributes: {
+    nom: {
+      type: 'string'
+    },
 
+    prenom: {
+      type: 'string'
+    },
+
+    photo: {
+      type: 'binary'
+    },
+
+    nationalite: {
+      type: 'string'
+    },
+
+    age: {
+      type: 'integer'
+    },
+
+    derniere_loc_lat: {
+      type: 'float'
+    },
+
+    derniere_loc_lng: {
+      type: 'float'
+    }
   }
 };
 

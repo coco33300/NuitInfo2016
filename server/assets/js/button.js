@@ -10,9 +10,11 @@ function errorHandler(){
 
 
 $('#sendButton').click(function(){
+    var pictureId = parseInt($('#pictureId').val());
+
     var formData = new FormData($('form')[0]);
     $.ajax({
-        url: 'http://app.crowdpick.xyz:1337/personnes/upload',  //Server script to process data
+        url: 'http://app.crowdpick.xyz:1337/personnes/upload/' + pictureId,  //Server script to process data
         type: 'POST',
         //crossDomain: true,
         //Ajax events

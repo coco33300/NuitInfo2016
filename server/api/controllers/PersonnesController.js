@@ -24,13 +24,26 @@ module.exports = {
       var fs = require('fs');
       var file = files[0];
       var old_picture_path = file.fd;
-      var new_picture = process.cwd() + '/img/test.jpg';
+      var new_picture = process.cwd() + '/img/' + req.params.id + '.jpg';
       fs.rename(old_picture_path, new_picture);
 
       res.json(201, {
         result: 'ok'
       });
     });
+  },
+
+  download: function (req, res) {
+    var location = process.cwd() + '/img/' + req.params.id + '.jpg';
+    var SkipperDisk = require('skipper-disk');
+    var fileAdapter = SkipperDisk();
+    res.attachment('picture.png');
+
+    fileAdapter.read(location).on('error', function (err) {
+      return res.json(400, {
+        error: err.toString()
+      });
+    }).pipe(res);
   }
 };
 

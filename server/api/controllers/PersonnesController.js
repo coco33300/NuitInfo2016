@@ -28,7 +28,7 @@ module.exports = {
       fs.rename(old_picture_path, new_picture);
 
       res.json(201, {
-        pick: newPick
+        result: 'ok'
       });
     });
   }

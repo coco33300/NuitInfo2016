@@ -46,5 +46,5 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'POST /personnes/upload': PersonnesController.upload
+  'POST /personnes/upload': 'PersonnesController.upload'
 };

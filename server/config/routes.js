@@ -34,7 +34,7 @@ module.exports.routes = {
 
   '/': {
     view: 'homepage'
-  }
+  },
 
   /***************************************************************************
   *                                                                          *
@@ -46,4 +46,12 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  'POST /personnes/upload':  {
+    cors: {
+      origin: '*',
+        headers: 'Content-Type, Authorization'
+    },
+    controller: 'PersonnesController',
+      action: 'upload'
+  }
 };

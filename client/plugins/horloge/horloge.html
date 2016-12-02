@@ -34,8 +34,7 @@
             timezones.forEach(function (timezone, i ) {
                 var d = new Date();
                 var tz = document.getElementById("tz"+i);
-                console.log(document.getElementById("tz"+i));
-                tz.innerHTML = ((d.getUTCHours() + timezone.offset )%24 ) + ":" + d.getMinutes() + ":" + d.getSeconds()+ "\t" + timezone.utc;
+                tz.innerHTML = getHour(d.getUTCHours(), timezone.offset ) + ":" + d.getMinutes() + ":" + d.getSeconds()+ "\t" + timezone.utc;
 
             })
         };
@@ -44,15 +43,28 @@
     </script>
     <script>
         var nbtz = 0;
+        function getHour(utcHour, offset) {
+            if (offset >=0) return (utcHour + offset)%24;
+            else if (utcHour > Math.abs(offset)) return utcHour + offset;
+            else return 24 + (utcHour +offset);
+        }
         function addTimeZone(){
             var select = document.getElementById("newTimeZone");
             var option = select.options[select.selectedIndex];
+            var alreadyExist = false;
+            timezones.forEach(function (tz) {
+                if (tz.offset == parseInt(option.value)) {
+                    alreadyExist =true;
+                    return;
+                }
+            });
+            if (alreadyExist === true) return;
             var t = {offset : parseInt(option.value), utc: ("UTC" + ( option.value > 0? " +" +option.value : option.value))};
             timezones.push(t);
             var d = new Date();
             var newTZ = document.createElement("div");
             newTZ.id = "tz" +nbtz;
-            newTZ.innerHTML = ((d.getUTCHours() + t.offset )%24 ) + ":" + d.getMinutes() + ":" + d.getSeconds()+"\t" + t.utc;
+            newTZ.innerHTML = getHour(d.getUTCHours(), t.offset ) + ":" + d.getMinutes() + ":" + d.getSeconds()+"\t" + t.utc;
             document.getElementById("Timezones").appendChild(newTZ);
             nbtz++;
         }

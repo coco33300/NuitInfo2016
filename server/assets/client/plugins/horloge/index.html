@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Horloge</title>
+    <style>
 
+      @media screen and (min-width: 500px) {
+        body {
+          text-align: center;
+        }
+        #Horloge{
+          position: relative;
+          width: 60%;
+          margin: auto;
+          padding: 5px;
+        }
+        #Horloge > img{
+          float: none;
+        }
+      }
+    </style>
   <script>
     function addAZeroIfNeeded(aNumber) {
       return (aNumber < 10 )? ("0"+ aNumber) : (aNumber);
@@ -11,6 +27,7 @@
   </script>
 </head>
     <body>
+        <div id="Horloge">
         <div id="Today"></div><br>
         <div id="locale"></div><!-- timezone from where the user is connected should be the one returned by Date object -->
         <div id="Timezones">
@@ -26,6 +43,7 @@
             </select>
             <button onclick="addTimeZone()">+</button>
         </div>
+      </div>
     </body>
     <script>
         var Months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];

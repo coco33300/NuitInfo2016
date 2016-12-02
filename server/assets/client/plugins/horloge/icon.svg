@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="558"
-   height="558"
-   viewBox="0 0 558.00001 558.00001"
+   width="186"
+   height="186"
+   viewBox="0 0 186 186"
    id="svg4559"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="icon_horloge.svg">
+   sodipodi:docname="icon_horloge_fin.svg">
   <defs
      id="defs4561" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.5722656"
-     inkscape:cx="198.73868"
-     inkscape:cy="220.44291"
+     inkscape:zoom="3.5314559"
+     inkscape:cx="-41.205076"
+     inkscape:cy="34.44291"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -38,15 +38,15 @@
      inkscape:window-y="19"
      inkscape:window-maximized="1"
      units="px"
-     fit-margin-top="186"
-     fit-margin-left="186"
-     fit-margin-right="186"
-     fit-margin-bottom="186">
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
        id="grid5107"
-       originx="-198.52646"
-       originy="-521.93926" />
+       originx="-384.52646"
+       originy="-707.93925" />
   </sodipodi:namedview>
   <metadata
      id="metadata4564">
@@ -64,7 +64,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-198.52646,27.577072)">
+     transform="translate(-384.52646,-158.42293)">
     <g
        id="g5300"
        style="fill:none;stroke:#ffffff">

@@ -5,6 +5,9 @@
   <title>Météo</title>
 
   <style>
+    body{
+      background-color: transparent;
+    }
     #METEO {
       position: relative;
     }
@@ -18,6 +21,22 @@
       position: absolute;
       right: 10px;
       bottom: 5px;
+    }
+
+    @media screen and (min-width: 500px) {
+      body {
+        text-align: center;
+      }
+      #METEO{
+        position: relative;
+        width: 60%;
+        margin: auto;
+        background-color: #bbcafcb3;
+        padding: 5px;
+      }
+      #METEO > img{
+        float: none;
+      }
     }
   </style>
 </head>

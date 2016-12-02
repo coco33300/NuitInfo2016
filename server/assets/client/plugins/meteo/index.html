@@ -43,7 +43,7 @@
                     var meteo = document.getElementById("METEO");
 
                     var h2 = document.createElement("h2");
-                    h2.append(document.createTextNode("Météo "+response["name"]));
+                    h2.append(document.createTextNode("Météo "+response["name"]+" ["+response["coord"]["lat"]+","+response["coord"]["lon"]+"]"));
 
                     meteo.append(h2);
 

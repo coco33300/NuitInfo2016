@@ -4,6 +4,7 @@ var PLUGINS = [
     
     "horloge",
     "meteo",
-    "fichePersonne"
+    "fichePersonne",
+    "twitter"
     
 ];

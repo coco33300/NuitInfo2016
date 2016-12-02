@@ -37,9 +37,14 @@ module.exports = {
     var location = process.cwd() + '/img/' + req.params.id + '.jpg';
 
     fs = require('fs');
-    var img = fs.readFileSync(location);
-    res.writeHead(200, {'Content-Type': 'image/jpeg' });
-    res.end(img, 'binary');
+    fs.readFile(location, function (err, data) {
+      if (err) {
+        res.status(500, err);
+      }
+      res.writeHead(200, {'Content-Type': 'image/jpeg' });
+      res.end(data, 'binary');
+    });
+
 
     // var SkipperDisk = require('skipper-disk');
     // var fileAdapter = SkipperDisk();

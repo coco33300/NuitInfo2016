@@ -9,21 +9,44 @@ function initSmallUiGrid()
 
 function addPlugin(name)
 {
-    var pluginInstance = document.createElement("div");
+    var pluginContainer = document.createElement("div");
     var iframe = document.createElement("iframe");
-    var max   = document.createElement("img");
-    var close = document.createElement("img");
+    var min    = document.createElement("img");
+    var max    = document.createElement("img");
+    var close  = document.createElement("img");
 
-    pluginInstance.className = "pluginInstance";
-    iframe.src = "plugins/" + name;
+    pluginContainer.className = "pluginContainer";
+    
+    iframe.src = "plugins/" + name + "/";
+
+    min.src = "core/res/min.svg";
+    min.className = "min";
+    min.onclick = function(e)
+    {
+        minimize();
+        return false;
+    };
+    
     max.src = "core/res/max.svg";
     max.className = "max";
+    max.onclick = function(e)
+    {
+        maximize(pluginContainer);
+        return false;
+    };
+
     close.src = "core/res/close.svg";
     close.className = "close";
+    close.onclick = function(e)
+    {
+        SmallUiGrid.removeChild(pluginContainer);
+        return false;
+    };
 
-    pluginInstance.appendChild(max);
-    pluginInstance.appendChild(close);
-    pluginInstance.appendChild(iframe);
+    pluginContainer.appendChild(min);
+    pluginContainer.appendChild(max);
+    pluginContainer.appendChild(close);
+    pluginContainer.appendChild(iframe);
 
-    SmallUiGrid.appendChild(pluginInstance);
+    SmallUiGrid.appendChild(pluginContainer);
 }

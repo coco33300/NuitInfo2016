@@ -1,19 +1,30 @@
+@font-face
+{
+    font-family: Gidole;
+    src: url(gidole.ttf);
+}
+
 body
 {
     display: flex;
 
     height: 100vh;
 
+    font-family: Gidole, sans-serif;
+    
     margin: 0;
+
+    background-color: rgb(50,50,50);
 }
 
-.pluginInstance iframe
+iframe
 {
     border: none;
     width: 100%;
     height: 100%;
 
-    background-color: red;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 #bigUi
@@ -23,17 +34,16 @@ body
     display: flex;
     
     height: 100vh;
-    background-color: red;
+    /*background-color: red;*/
 }
-#bigUi > .pluginInstance
+#bigUi > .pluginContainer
 {
     flex: 1;
 
     margin: 20px;
 
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    
-    background-color: white;
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: white;*/
 }
 
 #panel
@@ -43,7 +53,7 @@ body
 
     width: 500px;
     
-    background-color: blue;
+    /*background-color: blue;*/
 }
 
 #smallUiGrid
@@ -52,9 +62,9 @@ body
 
     overflow-y: auto;
     
-    background-color: purple;
+    /*background-color: purple;*/
 }
-#smallUiGrid > .pluginInstance
+#smallUiGrid > .pluginContainer
 {
     position: relative;
     
@@ -62,15 +72,36 @@ body
     
     height: 200px;
 
-    background-color: white;
-
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    /*background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
 }
-#smallUiGrid > .pluginInstance:hover > .close
+
+#smallUiGrid > .pluginContainer.empty
+{
+    text-align: center;
+    line-height: 200px;
+}
+#smallUiGrid > .pluginContainer.empty > img
+{
+    display: inline;
+    position: static;
+    width: 50px;
+    margin: 10px;
+}
+#smallUiGrid > .pluginContainer.empty:hover > img
+{
+    display: inline;
+}
+#smallUiGrid > .pluginContainer.empty > .max, #smallUiGrid > .pluginContainer.empty:hover > .max
+{
+    display: none;
+}
+
+#smallUiGrid > .pluginContainer:hover > .close
 {
     display: block;
 }
-#smallUiGrid > .pluginInstance > .close
+#smallUiGrid > .pluginContainer > .close
 {
     display: none;
 
@@ -82,15 +113,16 @@ body
     right: 0;
     top: 0;
 }
-#smallUiGrid > .pluginInstance > .close:hover
+#smallUiGrid > .pluginContainer > .close:hover
 {
     background-color: rgba(255,100,100,0.8);
 }
-#smallUiGrid > .pluginInstance:hover > .max
+
+#smallUiGrid > .pluginContainer:hover > .max
 {
     display: block;
 }
-#smallUiGrid > .pluginInstance > .max
+#smallUiGrid > .pluginContainer > .max
 {
     display: none;
 
@@ -102,7 +134,21 @@ body
     right: 30px;
     top: 0;
 }
-#smallUiGrid > .pluginInstance > .max:hover
+#smallUiGrid > .pluginContainer > .max:hover
+{
+    background-color: rgba(100,100,100,0.8);
+}
+
+#smallUiGrid > .pluginContainer.empty > .min
+{
+    display: inline;
+}
+#smallUiGrid > .pluginContainer > .min
+{
+    display: none;
+    background-color: rgba(0,0,0,0.8);
+}
+#smallUiGrid > .pluginContainer > .min:hover
 {
     background-color: rgba(100,100,100,0.8);
 }
@@ -116,7 +162,7 @@ body
     overflow-x: auto;
     overflow-y: hidden;
     
-    background-color: green;
+    /*background-color: green;*/
 }
 #pluginsGrid > *
 {
@@ -126,9 +172,8 @@ body
     
     height: 100px;
     width: 100px;
-
-    background-color: white;
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    
+    /*box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
 }
 #pluginsGrid > :last-child
 {
@@ -138,5 +183,5 @@ body
 #banner
 {
     padding: 20px;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }

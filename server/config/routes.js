@@ -50,12 +50,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  'POST /personnes/upload':  {
-    cors: {
-      origin: '*',
-        headers: 'Content-Type, Authorization'
-    },
-    controller: 'PersonnesController',
-      action: 'upload'
-  }
+  'POST /personnes/upload/:id':  'PersonnesController.upload',
+  '/personnes/download/:id':  'PersonnesController.download'
 };

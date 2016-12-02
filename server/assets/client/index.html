@@ -1,61 +1,38 @@
 <!doctype html>
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <title>Titre de la page</title>
-        <link rel="stylesheet" href="core/res/style.css">
-    </head>
-    <body>
+  <head>
+    <meta charset="utf-8">
+    <title>Titre de la page</title>
+    <link rel="stylesheet" href="core/res/style.css">
+  </head>
+  <body>
 
-        <div id="bigUi">
+    <div id="bigUi">
 
-            <div class="pluginInstance">
-            </div>
-            
-        </div>
+      <div class="pluginInstance">
+      </div>
+      
+    </div>
 
-        <div id="panel">
-            <div id="smallUiGrid">
+    <div id="panel">
+      <div id="smallUiGrid">
 
-              <div class="pluginInstance">
-                <img class="max" src="core/res/max.svg" />
-                <img class="close" src="core/res/close.svg" />
-              </div>
-              <div class="pluginInstance">
-                <img class="max" src="core/res/max.svg" />
-                <img class="close" src="core/res/close.svg" />
-              </div>
-              <div class="pluginInstance">
-                <img class="max" src="core/res/max.svg" />
-                <img class="close" src="core/res/close.svg" />
-              </div>
-              <div class="pluginInstance">
-                <img class="max" src="core/res/max.svg" />
-                <img class="close" src="core/res/close.svg" />
-              </div>
+      </div>
+      
+      <div id="pluginsGrid" >
+      </div>
 
-            </div>
-            
-            <div id="pluginsGrid" >
-                <div>abc</div>
-                <div>def</div>
-                <div>abc</div>
-                <div>def</div>
-                <div>abc</div>
-                <div>def</div>
-                <div>abc</div>
-                <div>def</div>
-                <div>abc</div>
-                <div>def</div>
-            </div>
+      <div id="banner">
+        <h2>JCalc</h2>
+      </div>
+    </div>
+    
 
-            <div id="banner">
-                <h2>JCalc</h2>
-            </div>
-        </div>
-        
-        
-        <script src="core/src/main.js"></script>
-        <script>init();</script>
-    </body>
+    <script src="core/src/init.js"></script>
+    <script src="core/src/pluginsGrid.js"></script>
+    <script src="core/src/smallUiGrid.js"></script>
+    <script src="plugins/plugins.js"></script>
+    
+    <script>init();</script>
+  </body>
 </html>

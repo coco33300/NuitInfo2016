@@ -7,6 +7,15 @@ body
     margin: 0;
 }
 
+.pluginInstance iframe
+{
+    border: none;
+    width: 100%;
+    height: 100%;
+
+    background-color: red;
+}
+
 #bigUi
 {
     flex: 1;
@@ -109,7 +118,7 @@ body
     
     background-color: green;
 }
-#pluginsGrid > div
+#pluginsGrid > *
 {
     display: inline-block;
 
@@ -121,7 +130,7 @@ body
     background-color: white;
     box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-#pluginsGrid > div:last-child
+#pluginsGrid > :last-child
 {
     margin-right: 20px;
 }

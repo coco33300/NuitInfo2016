@@ -38,7 +38,7 @@ module.exports = {
     var SkipperDisk = require('skipper-disk');
     var fileAdapter = SkipperDisk();
     res.attachment('picture.png');
-
+    res.setHeader('Content-type', 'image/jpeg');
     fileAdapter.read(location).on('error', function (err) {
       return res.json(400, {
         error: err.toString()

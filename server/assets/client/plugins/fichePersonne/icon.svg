@@ -9,9 +9,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="558.45593"
-   height="558"
-   viewBox="0 0 558.45594 558.00001"
+   width="404"
+   height="404"
+   viewBox="0 0 404 404.00001"
    id="svg6330"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -26,8 +26,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.78613281"
-     inkscape:cx="223.05392"
-     inkscape:cy="324.11029"
+     inkscape:cx="142.59801"
+     inkscape:cy="247.11029"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -37,15 +37,15 @@
      inkscape:window-y="19"
      inkscape:window-maximized="1"
      units="px"
-     fit-margin-left="84"
-     fit-margin-right="84"
-     fit-margin-top="77"
-     fit-margin-bottom="77">
+     fit-margin-left="30"
+     fit-margin-right="30"
+     fit-margin-top="0"
+     fit-margin-bottom="0">
     <inkscape:grid
        type="xygrid"
        id="grid6878"
-       originx="-67.544098"
-       originy="-181.00001" />
+       originx="-148"
+       originy="-258.00001" />
   </sodipodi:namedview>
   <metadata
      id="metadata6335">
@@ -63,7 +63,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-67.544098,-313.36218)">
+     transform="translate(-148,-390.36218)">
     <path
        id="path6882"
        style="fill:none;fill-opacity:1;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"

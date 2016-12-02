@@ -35,15 +35,21 @@ module.exports = {
 
   download: function (req, res) {
     var location = process.cwd() + '/img/' + req.params.id + '.jpg';
-    var SkipperDisk = require('skipper-disk');
-    var fileAdapter = SkipperDisk();
-    res.attachment('picture.png');
-    res.setHeader('Content-type', 'image/jpeg');
-    fileAdapter.read(location).on('error', function (err) {
-      return res.json(400, {
-        error: err.toString()
-      });
-    }).pipe(res);
+
+    fs = require('fs');
+    var img = fs.readFileSync(location);
+    res.writeHead(200, {'Content-Type': 'image/jpeg' });
+    res.end(img, 'binary');
+
+    // var SkipperDisk = require('skipper-disk');
+    // var fileAdapter = SkipperDisk();
+    // res.attachment('picture.png');
+    // res.setHeader('Content-type', 'image/jpeg');
+    // fileAdapter.read(location).on('error', function (err) {
+    //   return res.json(400, {
+    //     error: err.toString()
+    //   });
+    // }).pipe(res);
   }
 };
 

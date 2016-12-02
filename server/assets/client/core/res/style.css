@@ -11,10 +11,11 @@ body
     height: 100vh;
 
     font-family: Gidole, sans-serif;
+    color: white;
     
     margin: 0;
 
-    background-color: rgb(50,50,50);
+    background-color: rgb(40,40,40);
 }
 
 iframe
@@ -23,8 +24,8 @@ iframe
     width: 100%;
     height: 100%;
 
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    background-color: rgb(200,200,200);
+    /*box-shadow: 0 0 10px rgba(0,0,0,0.5);*/
 }
 
 #bigUi
@@ -40,10 +41,22 @@ iframe
 {
     flex: 1;
 
+    position: relative;
+    
     margin: 20px;
 
     /*box-shadow: 0 0 10px rgba(0,0,0,0.5);
     background-color: white;*/
+}
+#bigUi > .pluginContainer > img
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    height: 200px;
+
+    transform: translate(-50%, -50%);
 }
 
 #panel
@@ -155,14 +168,14 @@ iframe
 
 #pluginsGrid
 {
-    height: 140px;
+    height: 100px;
 
     white-space: nowrap;
 
     overflow-x: auto;
     overflow-y: hidden;
     
-    /*background-color: green;*/
+    background-color: rgb(60,60,60);
 }
 #pluginsGrid > *
 {
@@ -170,8 +183,7 @@ iframe
 
     margin: 20px 0px 20px 20px;
     
-    height: 100px;
-    width: 100px;
+    height: 60px;
     
     /*box-shadow: 0 0 5px rgba(0,0,0,0.5);*/
 }
@@ -182,6 +194,17 @@ iframe
 
 #banner
 {
-    padding: 20px;
-    /*background-color: yellow;*/
+    display: flex;
+    padding: 5px;
+    background-color: rgb(90,90,90);
+}
+#banner img
+{
+    height: 40px;
+}
+#banner p
+{
+    flex: 1;
+    margin: 0;
+    text-align: center;
 }

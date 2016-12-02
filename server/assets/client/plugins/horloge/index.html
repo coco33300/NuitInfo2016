@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Horloge</title>
+
+  <script>
+    function addAZeroIfNeeded(aNumber) {
+      return (aNumber < 10 )? ("0"+ aNumber) : (aNumber);
+    }
+  </script>
 </head>
     <body>
         <div id="Today"></div><br>
@@ -25,16 +31,16 @@
         var Months = ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"];
         date = new Date();
         document.getElementById("Today").innerHTML = date.getDate()+" " +Months[date.getMonth()]+" "+date.getFullYear();
-        document.getElementById("locale").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+        document.getElementById("locale").innerHTML = date.getHours() + ":" + addAZeroIfNeeded(date.getMinutes()) + ":" + addAZeroIfNeeded(date.getSeconds());
         var timezones = [];
         update = function () {
             var date = new Date();
             document.getElementById("Today").innerHTML = date.getDate()+" " +Months[date.getMonth()]+" "+date.getFullYear();
-            document.getElementById("locale").innerHTML = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            document.getElementById("locale").innerHTML = date.getHours() + ":" + addAZeroIfNeeded(date.getMinutes()) + ":" + addAZeroIfNeeded(date.getSeconds());
             timezones.forEach(function (timezone, i ) {
                 var d = new Date();
                 var tz = document.getElementById("tz"+i);
-                tz.innerHTML = getHour(d.getUTCHours(), timezone.offset ) + ":" + d.getMinutes() + ":" + d.getSeconds()+ "\t" + timezone.utc;
+                tz.innerHTML = getHour(d.getUTCHours(), timezone.offset ) + ":" + addAZeroIfNeeded(d.getMinutes()) + ":" + addAZeroIfNeeded(d.getSeconds())+ "\t" + timezone.utc;
 
             })
         };
@@ -64,9 +70,9 @@
             var d = new Date();
             var newTZ = document.createElement("div");
             newTZ.id = "tz" +nbtz;
-            newTZ.innerHTML = getHour(d.getUTCHours(), t.offset ) + ":" + d.getMinutes() + ":" + d.getSeconds()+"\t" + t.utc;
+            newTZ.innerHTML = getHour(d.getUTCHours(), t.offset ) + ":" + addAZeroIfNeeded(d.getMinutes()) + ":" + addAZeroIfNeeded(d.getSeconds())+"\t" + t.utc;
             document.getElementById("Timezones").appendChild(newTZ);
             nbtz++;
         }
-    </script>
+      </script>
 </html>

@@ -15,7 +15,6 @@
 </head>
 <body>
     <div id="METEO">
-        <h2></h2>
     </div>
     <script>
         function init() {
@@ -56,6 +55,16 @@
                     temp.append(document.createTextNode("Température: "+(response["main"]["temp"])+" °C"));
 
                     meteo.append(temp);
+
+                    img = document.createElement("img");
+                    img.setAttribute("src", "vent.png");
+                    meteo.append(img);
+
+
+                    var wind = document.createElement("div");
+                    wind.append(document.createTextNode("Vent: "+(response["wind"]["speed"])+" m/s"));
+
+                    meteo.append(wind);
                 }
             }
         }

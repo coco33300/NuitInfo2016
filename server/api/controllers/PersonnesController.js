@@ -36,6 +36,7 @@ module.exports = {
   download: function (req, res) {
     var location = process.cwd() + '/img/' + req.params.id + '.jpg';
 
+    console.read('DOWNLOAD');
     fs = require('fs');
     fs.readFile(location, function (err, data) {
       if (err) {

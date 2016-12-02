@@ -205,6 +205,6 @@ iframe
 #banner p
 {
     flex: 1;
-    margin: 0;
+    margin: 0 40px;
     text-align: center;
 }

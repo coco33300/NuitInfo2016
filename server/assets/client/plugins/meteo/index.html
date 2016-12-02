@@ -1,74 +1,130 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <title>Météo</title>
+  <meta charset="UTF-8">
+  <title>Météo</title>
 
-    <style>
-        #METEO > img {
-            float: left;
-        }
-        #METEO > div {
-            line-height: 50px;
-        }
-    </style>
+  <style>
+    #METEO {
+      position: relative;
+    }
+    #METEO > img {
+      float: left;
+    }
+    #METEO > div {
+      line-height: 50px;
+    }
+    #loading{
+      position: absolute;
+      right: 10px;
+      bottom: 5px;
+    }
+  </style>
 </head>
 <body>
-    <div id="METEO">
-    </div>
-    <script>
-        function init() {
-            if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(showWeather);
-            } else {
-                x.innerHTML = "Geolocation is not supported by this browser.";
-            }
-        }
+<div id="METEO">
+  <img id="loading" src="load.gif" alt="chargement..."/>
+</div>
+<script>
+  var INTERVAL;
+  function remove(){
+    var meteo = document.getElementById("METEO");
+    for(var i =1; i < meteo.children.length; i++) {
+      document.getElementById("METEO").removeChild(meteo.children[i]);
+    }
+  }
+  function init() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(callback);
+    } else {
+      x.innerHTML = "Geolocation is not supported by this browser.";
+    }
 
-        function showWeather(position) {
-            var url = "http://api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+
-                    "&lon="+position.coords.longitude+"&units=metric&appid=354821bd975ea4ca47de9cdf5591d9e2";
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET', url, true);
-            xhr.send();
+    function callback(position){
+      initWeather(position);
+      INTERVAL = setInterval(function(){showWeather(position);}, 30000);
+    }
+  }
+  function initWeather(position) {
+    document.getElementById("loading").style.display = "block";
 
-            xhr.onreadystatechange = processRequest;
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+
+      "&lon="+position.coords.longitude+"&units=metric&appid=354821bd975ea4ca47de9cdf5591d9e2";
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.send();
 
-            function processRequest(e) {
-                if (xhr.readyState == 4 && xhr.status == 200) {
+    xhr.onreadystatechange = processRequest;
 
-                    var response = JSON.parse(xhr.responseText);
+    function processRequest(e) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
 
-                    console.log(response);
-                    var meteo = document.getElementById("METEO");
+        var response = JSON.parse(xhr.responseText);
 
-                    var h2 = document.createElement("h2");
-                    h2.append(document.createTextNode("Météo "+response["name"]+" ["+response["coord"]["lat"]+","+response["coord"]["lon"]+"]"));
+        console.log(response);
+        var meteo = document.getElementById("METEO");
 
-                    meteo.append(h2);
+        var h2 = document.createElement("h2");
+        h2.append(document.createTextNode("Météo "+response["name"]+" ["+response["coord"]["lat"]+","+response["coord"]["lon"]+"]"));
 
-                    var img = document.createElement("img");
-                    img.setAttribute("src", "http://openweathermap.org/img/w/"+response["weather"][0]["icon"]+".png");
-                    meteo.append(img);
+        meteo.append(h2);
 
-                    var temp = document.createElement("div");
-                    temp.append(document.createTextNode("Température: "+(response["main"]["temp"])+" °C"));
+        var img = document.createElement("img");
+        img.setAttribute("src", "http://openweathermap.org/img/w/"+response["weather"][0]["icon"]+".png");
+        meteo.append(img);
 
-                    meteo.append(temp);
+        var temp = document.createElement("div");
+        temp.append(document.createTextNode("Température: "+(response["main"]["temp"])+" °C"));
 
-                    img = document.createElement("img");
-                    img.setAttribute("src", "vent.png");
-                    meteo.append(img);
+        meteo.append(temp);
+
+        img = document.createElement("img");
+        img.setAttribute("src", "vent.png");
+        meteo.append(img);
 
 
-                    var wind = document.createElement("div");
-                    wind.append(document.createTextNode("Vent: "+(response["wind"]["speed"])+" m/s"));
+        var wind = document.createElement("div");
+        wind.append(document.createTextNode("Vent: "+(response["wind"]["speed"])+" m/s"));
 
-                    meteo.append(wind);
-                }
-            }
-        }
-        init();
-    </script>
+        meteo.append(wind);
+        document.getElementById("loading").style.display = "none";
+      }
+    }
+  }
+
+  function showWeather(position) {
+    document.getElementById("loading").style.display = "block";
+
+    var url = "http://api.openweathermap.org/data/2.5/weather?lat="+position.coords.latitude+
+      "&lon="+position.coords.longitude+"&units=metric&appid=354821bd975ea4ca47de9cdf5591d9e2";
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.send();
+
+    xhr.onreadystatechange = processRequest;
+
+    function processRequest(e) {
+      if (xhr.readyState == 4 && xhr.status == 200) {
+
+        var response = JSON.parse(xhr.responseText);
+
+        console.log(response);
+        var meteo = document.getElementById("METEO");
+
+        meteo.children[1].innerHTML="Météo "+response["name"]+" ["+response["coord"]["lat"]+","+response["coord"]["lon"]+"]";
+
+        meteo.children[2].setAttribute("src", "http://openweathermap.org/img/w/"+response["weather"][0]["icon"]+".png");
+
+        meteo.children[3].innerHTML = "Température: "+(response["main"]["temp"])+" °C";
+
+
+        meteo.children[5].innerHTML = "Vent: "+(response["wind"]["speed"])+" m/s";
+
+        document.getElementById("loading").style.display = "none";
+      }
+    }
+  }
+  init();
+</script>
 </body>
 </html>

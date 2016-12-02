@@ -9,13 +9,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="558.19275"
-   height="558.64142"
-   viewBox="0 0 558.19274 558.6414"
+   width="302.19275"
+   height="302.64145"
+   viewBox="0 0 302.19274 302.64144"
    id="svg5342"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="icon_2.svg">
+   sodipodi:docname="icon_meteo_fin.svg">
   <defs
      id="defs5344" />
   <sodipodi:namedview
@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.55587984"
-     inkscape:cx="277.12728"
-     inkscape:cy="226.9355"
+     inkscape:zoom="1.2485582"
+     inkscape:cx="-3.448703"
+     inkscape:cy="98.93554"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -36,16 +36,16 @@
      inkscape:window-x="0"
      inkscape:window-y="19"
      inkscape:window-maximized="1"
-     fit-margin-left="128"
-     fit-margin-top="170"
-     fit-margin-right="128"
-     fit-margin-bottom="170"
+     fit-margin-left="0"
+     fit-margin-top="42"
+     fit-margin-right="0"
+     fit-margin-bottom="42"
      units="px">
     <inkscape:grid
        type="xygrid"
        id="grid5890"
-       originx="81.700035"
-       originy="52.698957" />
+       originx="-46.299962"
+       originy="-75.300999" />
   </sodipodi:namedview>
   <metadata
      id="metadata5347">
@@ -63,7 +63,7 @@
      inkscape:label="Calque 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(81.70004,-546.41973)">
+     transform="translate(-46.29996,-674.41973)">
     <g
        transform="translate(-9.0472535,303.5979)"
        id="g5951-2" />
